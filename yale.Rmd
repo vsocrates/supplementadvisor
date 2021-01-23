@@ -1,0 +1,62 @@
+---
+title:|
+  |Yale Dataset Processing
+header-includes: \usepackage{float} 
+output:
+  word_document: default 
+    pdf_document:
+      extra_dependencies: float 
+subtitle: |
+| Qiaoru Zhang 
+fontsize: 12pt
+---
+\newpage
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,fig.pos = "H", out.extra = "")
+```
+
+```{r,include = FALSE}
+## Required library papckages 
+library(tidyverse) 
+library(readxl) 
+library(writexl)
+```
+
+```{r,echo=FALSE}
+library(readxl)
+yale<- read_excel("Desktop/yale..xlsx")
+View(yale)
+```
+
+#replace ";" with ","
+```{r,echo=FALSE}
+t1<-gsub(";", ',', yale$Ingredients, fixed = T)
+View(t1)
+```
+#replace ":" with ","
+```{r,echo=FALSE}
+t2<-gsub(":", ',', t1, fixed = T)
+View(t2)
+```
+#replace "." with ","
+```{r,echo=FALSE}
+Ingredientslist<-gsub(".", ',', t2, fixed = T)
+View(Ingredientslist)
+```
+#replace new column 
+```{r,echo=FALSE}
+yale[["Ingredients"]] <- Ingredientslist
+view(yale)
+```
+
+```{r,echo=FALSE}
+
+```
+
+
+
+
+
+
+
+
