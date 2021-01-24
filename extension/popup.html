@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+
+    <h1>Supplementary</h1>
+    <div class="tooltip">
+      <h2>Safety Score</h2>
+      <span class="tooltiptext">Tooltip text</span>
+    </div>
+
+
+    <div class="main">
+      <input
+          type="range"
+          name="participants"
+          min="1"
+          max="10"
+          value="5"
+          id="safety-input"
+      >
+    </div>
+    <h2 class="main-bottom">Effectiveness Score</h2>
+    <div class="main">
+      <input
+          type="range"
+          name="participants"
+          min="1"
+          max="10"
+          value="5"
+          id="effective-input"
+      >
+    </div>
+    <h2>Harmful Ingredients</h2>
+    <div class="harmful"></div>
+    <h2>Warnings</h2>
+    <div class="warnings"></div>
+    <h2>Recommendation</h2>
+    <div class="recommendations"></div>
+    <h2>Support from Research</h2>
+    <div class="support"></div>
+
+    <p class="output"></p>
+
+
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/underscore@1.12.0/underscore-min.js"></script>
+    <script src="rangeslider.min.js"></script>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,12 +1,18 @@
 {
-  "name": "Getting Started Example",
+  "name": "Supplementary",
   "version": "1.0",
-  "description": "Build an Extension!",
-  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "description": "Supplement Info Bot!",
+  "permissions": ["activeTab", "tabs", "declarativeContent", "storage"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["webscrape.js"]
+    }
+  ],  
   "page_action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -22,5 +28,6 @@
     "48": "images/get_started48.png",
     "128": "images/get_started128.png"
   },
+  "content_security_policy": "script-src 'self' https://unpkg.com; object-src 'self'",
   "manifest_version": 2
 }
